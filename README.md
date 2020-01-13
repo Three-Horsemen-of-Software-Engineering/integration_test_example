@@ -1,4 +1,6 @@
-# [Automatic introduction](https://flutter.dev/docs/cookbook/testing/integration/introduction)
+# [Integration tests introduction](https://flutter.dev/docs/cookbook/testing/integration/introduction)
+
+##[example repository](https://github.com/Three-Horsemen-of-Software-Engineering/integration_test_example);
 
 Test must include at least 2 modules, the first is testName.dart contains <br/>
 initializing part that run our app from the required part. <br/>
@@ -14,7 +16,7 @@ initializing part that run our app from the required part. <br/>
      Should notify that using widget tests in this module is <br/>
     forbidden. This class must not have dart.ui dependencies. <br/>
     
-   #Finders<br/>
+   ###Finders<br/>
            
    5 methods of widget finding are exists <br/>
    ///Depends on widget class, class must be single visible or method will throw exception <br/>
@@ -28,7 +30,7 @@ initializing part that run our app from the required part. <br/>
    ///finds text widget location by string. Works only if string is unique.<br/>
    `find.text("text)`
    
-   #Driver access methods<br/>
+   ###Driver access methods<br/>
    
    finder - widget finder of widget that should be found in scrollable widget<br/>
    scrollable - widget that will be scrolled<br/>
@@ -48,5 +50,11 @@ initializing part that run our app from the required part. <br/>
    /// enters text to widget that you are focused on. This method don't call<br/>
    on edition finished callbacks, so you have to manage it by yourself.<br/>
    `driver.enterText(text);`<br/>
-   ///makes screenshot returns it in png format<br/>
+   ///makes screenshot returns it in png format encoded to List of Integers<br/>
    `driver.driver.screenshot();`<br/>
+   
+   ###Executing
+   
+   To avoid endless apk building you should build it first using `flutter build apk`
+   To run tests use `flutter drive --target=test_driver/integration.dart`
+
